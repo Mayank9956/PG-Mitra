@@ -54,7 +54,6 @@ body {
     color: #1E2A3A;
 }
 
-/* Desktop Header - Booking.com Style */
 .desktop-header {
     background: #003B95;
     position: sticky;
