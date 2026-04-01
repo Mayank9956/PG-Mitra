@@ -50,26 +50,30 @@ while($row = $cards_result->fetch_assoc()) {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #F7F9FC;
+    background: #F3F4F6;
     color: #1E2A3A;
 }
 
-/* Desktop Header */
+/* Desktop Header - Booking.com Style */
 .desktop-header {
     background: #003B95;
-    padding: 0 80px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 
-.header-top {
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .logo {
@@ -77,6 +81,8 @@ body {
     font-weight: 800;
     color: white;
     letter-spacing: -0.5px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .logo span {
@@ -113,7 +119,7 @@ body {
 .user-menu {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
 }
 
 .user-avatar {
@@ -154,6 +160,7 @@ body {
 .mobile-header .logo {
     font-size: 20px;
     color: white;
+    text-decoration: none;
 }
 
 .back-btn {
@@ -177,69 +184,129 @@ body {
     font-size: 18px;
 }
 
-/* Main Container */
+/* Main Container - Desktop */
 .main-container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 32px 80px;
+    padding: 40px 80px;
+    display: flex;
+    gap: 48px;
 }
 
-/* Mobile Container */
-.mobile-container {
-    display: none;
-    padding: 0 0 80px 0;
-    background: #F7F9FC;
-    min-height: 100vh;
+/* Sidebar - Desktop */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
 }
 
-/* Page Header */
-.page-header {
-    margin-bottom: 32px;
+.profile-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #E5E7EB;
+    margin-bottom: 24px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    overflow: hidden;
+    border: 3px solid #003B95;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1E2A3A;
+    margin-bottom: 4px;
+}
+
+.profile-email {
+    font-size: 12px;
+    color: #6B7280;
+    word-break: break-all;
+}
+
+.sidebar-menu {
+    background: white;
+    border-radius: 16px;
+    padding: 8px 0;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.sidebar-item {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
+    padding: 12px 20px;
+    color: #4B5563;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
 }
 
-.page-header h1 {
-    font-size: 28px;
-    font-weight: 800;
+.sidebar-item:hover {
+    background: #F9FAFB;
+    color: #003B95;
+}
+
+.sidebar-item.active {
+    background: #EFF6FF;
+    color: #003B95;
+    border-right: 3px solid #003B95;
+}
+
+.sidebar-item i {
+    width: 20px;
+    font-size: 16px;
+}
+
+/* Content Area */
+.content-area {
+    flex: 1;
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.content-header {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.content-header h1 {
+    font-size: 24px;
+    font-weight: 700;
     color: #1E2A3A;
+    margin-bottom: 8px;
 }
 
-.page-header p {
+.content-header p {
     color: #6B7280;
     font-size: 14px;
-    margin-top: 4px;
-}
-
-.back-link {
-    width: 40px;
-    height: 40px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.back-link:hover {
-    transform: translateX(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-}
-
-.back-link i {
-    font-size: 18px;
-    color: #003B95;
 }
 
 /* Add Card Button */
 .add-card-btn {
-    background: white;
-    border: 2px dashed #E5E7EB;
-    border-radius: 20px;
+    background: #F9FAFB;
+    border: 2px dashed #D1D5DB;
+    border-radius: 16px;
     padding: 32px;
     text-align: center;
     cursor: pointer;
@@ -249,7 +316,7 @@ body {
 
 .add-card-btn:hover {
     border-color: #003B95;
-    background: #F9FAFB;
+    background: #EFF6FF;
     transform: translateY(-2px);
 }
 
@@ -409,8 +476,8 @@ body {
 .empty-state {
     text-align: center;
     padding: 60px 20px;
-    background: white;
-    border-radius: 24px;
+    background: #F9FAFB;
+    border-radius: 16px;
 }
 
 .empty-state-icon {
@@ -457,6 +524,31 @@ body {
 .empty-state-btn:hover {
     background: #002E7A;
     transform: translateY(-2px);
+}
+
+/* Info Alert */
+.info-alert {
+    background: #EFF6FF;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #BFDBFE;
+}
+
+.info-alert i {
+    color: #003B95;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.info-alert p {
+    color: #1E40AF;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* Modal */
@@ -532,7 +624,7 @@ body {
 .form-input {
     width: 100%;
     padding: 12px 16px;
-    border: 1px solid #E5E7EB;
+    border: 1px solid #D1D5DB;
     border-radius: 12px;
     font-size: 14px;
     font-family: 'Inter', sans-serif;
@@ -596,6 +688,15 @@ body {
 .btn-primary:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    transform: none;
+}
+
+/* Mobile Container */
+.mobile-container {
+    display: none;
+    padding: 0 0 80px 0;
+    background: #F7F9FC;
+    min-height: 100vh;
 }
 
 /* Mobile Bottom Nav */
@@ -666,8 +767,13 @@ body {
 
 /* Responsive */
 @media (max-width: 1024px) {
+    .header-container {
+        padding: 0 32px;
+    }
+    
     .main-container {
-        padding: 24px 32px;
+        padding: 32px;
+        gap: 32px;
     }
 }
 
@@ -696,37 +802,35 @@ body {
         padding-bottom: 80px;
     }
     
-    .bank-card {
-        margin: 0 16px 16px 16px;
-    }
-    
-    .add-card-btn {
+    /* Mobile Card Styles */
+    .mobile-bank-card {
+        background: white;
+        border-radius: 16px;
         margin: 16px;
-        padding: 24px;
-    }
-    
-    .empty-state {
-        margin: 16px;
+        padding: 20px;
+        border: 1px solid #E5E7EB;
     }
 }
 </style>
 </head>
 <body>
 
-<!-- Desktop Header -->
+<!-- Desktop Header - Booking.com Style -->
 <div class="desktop-header">
-    <div class="header-top">
-        <div class="logo">PG<span>Mitra</span></div>
-        <div class="desktop-nav">
-            <a href="/home"><i class="fas fa-home"></i> Home</a>
-            <a href="/search"><i class="fas fa-search"></i> Search</a>
-            <a href="/bookings"><i class="fas fa-ticket-alt"></i> Bookings</a>
-            <a href="/saved-rooms"><i class="fas fa-heart"></i> Saved</a>
-            <a href="/profile" class="active"><i class="fas fa-user"></i> Profile</a>
-        </div>
-        <div class="user-menu">
-            <div class="user-avatar" onclick="window.location.href='/profile'">
-                <img src="<?php echo htmlspecialchars($profile_image); ?>" alt="Profile">
+    <div class="header-container">
+        <div class="header-content">
+            <a href="/home" class="logo">PG<span>Mitra</span></a>
+            <div class="desktop-nav">
+                <a href="/home"><i class="fas fa-home"></i> Home</a>
+                <a href="/search"><i class="fas fa-search"></i> Search</a>
+                <a href="/bookings"><i class="fas fa-ticket-alt"></i> Bookings</a>
+                <a href="/saved-rooms"><i class="fas fa-heart"></i> Saved</a>
+                <a href="/profile" class="active"><i class="fas fa-user"></i> Profile</a>
+            </div>
+            <div class="user-menu">
+                <div class="user-avatar" onclick="window.location.href='/profile'">
+                    <img src="<?php echo htmlspecialchars($profile_image); ?>" alt="Profile">
+                </div>
             </div>
         </div>
     </div>
@@ -737,106 +841,150 @@ body {
     <div class="back-btn" onclick="goBack()">
         <i class="fas fa-arrow-left"></i>
     </div>
-    <div class="logo">PG<span>Mitra</span></div>
+    <a href="/home" class="logo">PG<span>Mitra</span></a>
     <div class="user-avatar" onclick="window.location.href='/profile'">
         <img src="<?php echo htmlspecialchars($profile_image); ?>" alt="Profile">
     </div>
 </div>
 
-<!-- Desktop Layout -->
+<!-- Desktop Layout with Sidebar -->
 <div class="main-container">
-    <!-- Page Header -->
-    <div class="page-header">
-        <div class="back-link" onclick="goBack()">
-            <i class="fas fa-arrow-left"></i>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="profile-card">
+            <div class="profile-avatar">
+                <img src="<?php echo htmlspecialchars($profile_image); ?>" alt="<?php echo htmlspecialchars($display_name); ?>">
+            </div>
+            <div class="profile-name"><?php echo htmlspecialchars($display_name); ?></div>
+            <div class="profile-email"><?php echo htmlspecialchars($email); ?></div>
         </div>
-        <div>
-            <h1>Bank Cards</h1>
-            <p>Manage your withdrawal accounts</p>
-        </div>
-    </div>
-
-    <!-- Add Card Button -->
-    <div class="add-card-btn" onclick="openAddCardModal()">
-        <i class="fas fa-plus-circle"></i>
-        <h3>Add New Bank Card</h3>
-        <p>Add your bank account for withdrawals</p>
-    </div>
-
-    <!-- Cards List -->
-    <div id="cardsContainer">
-        <?php if(empty($cards)): ?>
-        <div class="empty-state">
-            <div class="empty-state-icon">
+        
+        <div class="sidebar-menu">
+            <div class="sidebar-item" onclick="goToPage('profile')">
+                <i class="fas fa-user"></i>
+                <span>Profile Overview</span>
+            </div>
+            <div class="sidebar-item" onclick="goToPage('bookings')">
+                <i class="fas fa-calendar-alt"></i>
+                <span>My Bookings</span>
+            </div>
+            <div class="sidebar-item" onclick="goToPage('saved-rooms')">
+                <i class="fas fa-heart"></i>
+                <span>Saved Rooms</span>
+            </div>
+            <div class="sidebar-item" onclick="goToPage('change-password')">
+                <i class="fas fa-lock"></i>
+                <span>Change Password</span>
+            </div>
+            <div class="sidebar-item active" onclick="goToPage('bank-cards')">
                 <i class="fas fa-credit-card"></i>
+                <span>Bank Cards</span>
             </div>
-            <h3>No Bank Cards Added</h3>
-            <p>Add your first bank card to start withdrawing money</p>
-            <button class="empty-state-btn" onclick="openAddCardModal()">
-                <i class="fas fa-plus mr-2"></i> Add Bank Card
-            </button>
+            <div class="sidebar-item" onclick="goToPage('settings')">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </div>
+            <div class="sidebar-item" onclick="showLogoutModal()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </div>
         </div>
-        <?php else: ?>
-            <?php foreach($cards as $card): ?>
-            <div class="bank-card" data-card-id="<?php echo $card['id']; ?>">
-                <div class="card-header">
-                    <div class="bank-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <?php if($card['is_default']): ?>
-                    <span class="default-badge">
-                        <i class="fas fa-check-circle"></i> Default
-                    </span>
-                    <?php endif; ?>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+        <div class="content-header">
+            <h1>Bank Cards</h1>
+            <p>Manage your withdrawal accounts for seamless transactions</p>
+        </div>
+
+        <div class="info-alert">
+            <i class="fas fa-shield-alt"></i>
+            <p>Your bank details are securely stored and encrypted. We only use this information for withdrawals and refunds.</p>
+        </div>
+
+        <!-- Add Card Button -->
+        <div class="add-card-btn" onclick="openAddCardModal()">
+            <i class="fas fa-plus-circle"></i>
+            <h3>Add New Bank Card</h3>
+            <p>Add your bank account for withdrawals</p>
+        </div>
+
+        <!-- Cards List -->
+        <div id="cardsContainer">
+            <?php if(empty($cards)): ?>
+            <div class="empty-state">
+                <div class="empty-state-icon">
+                    <i class="fas fa-credit-card"></i>
                 </div>
-                <div class="account-number"><?php echo htmlspecialchars($card['account_number_masked']); ?></div>
-                <div class="bank-detail">
-                    <i class="fas fa-user"></i>
-                    <span><?php echo htmlspecialchars($card['full_name']); ?></span>
-                </div>
-                <div class="bank-detail">
-                    <i class="fas fa-building"></i>
-                    <span><?php echo htmlspecialchars($card['bank_name']); ?></span>
-                </div>
-                <div class="bank-detail">
-                    <i class="fas fa-code"></i>
-                    <span><?php echo htmlspecialchars($card['ifsc_code']); ?></span>
-                </div>
-                <?php if(!empty($card['upi_id'])): ?>
-                <div class="bank-detail">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span><?php echo htmlspecialchars($card['upi_id']); ?></span>
-                </div>
-                <?php endif; ?>
-                <div class="card-actions">
-                    <?php if(!$card['is_default']): ?>
-                    <button class="card-action-btn" onclick="setDefault(<?php echo $card['id']; ?>)">
-                        <i class="fas fa-star"></i> Set Default
-                    </button>
-                    <?php endif; ?>
-                    <button class="card-action-btn delete" onclick="deleteCard(<?php echo $card['id']; ?>)">
-                        <i class="fas fa-trash"></i> Delete
-                    </button>
-                </div>
+                <h3>No Bank Cards Added</h3>
+                <p>Add your first bank card to start withdrawing money</p>
+                <button class="empty-state-btn" onclick="openAddCardModal()">
+                    <i class="fas fa-plus mr-2"></i> Add Bank Card
+                </button>
             </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+            <?php else: ?>
+                <?php foreach($cards as $card): ?>
+                <div class="bank-card" data-card-id="<?php echo $card['id']; ?>">
+                    <div class="card-header">
+                        <div class="bank-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <?php if($card['is_default']): ?>
+                        <span class="default-badge">
+                            <i class="fas fa-check-circle"></i> Default
+                        </span>
+                        <?php endif; ?>
+                    </div>
+                    <div class="account-number"><?php echo htmlspecialchars($card['account_number_masked']); ?></div>
+                    <div class="bank-detail">
+                        <i class="fas fa-user"></i>
+                        <span><?php echo htmlspecialchars($card['full_name']); ?></span>
+                    </div>
+                    <div class="bank-detail">
+                        <i class="fas fa-building"></i>
+                        <span><?php echo htmlspecialchars($card['bank_name']); ?></span>
+                    </div>
+                    <div class="bank-detail">
+                        <i class="fas fa-code"></i>
+                        <span><?php echo htmlspecialchars($card['ifsc_code']); ?></span>
+                    </div>
+                    <?php if(!empty($card['upi_id'])): ?>
+                    <div class="bank-detail">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span><?php echo htmlspecialchars($card['upi_id']); ?></span>
+                    </div>
+                    <?php endif; ?>
+                    <div class="card-actions">
+                        <?php if(!$card['is_default']): ?>
+                        <button class="card-action-btn" onclick="setDefault(<?php echo $card['id']; ?>)">
+                            <i class="fas fa-star"></i> Set Default
+                        </button>
+                        <?php endif; ?>
+                        <button class="card-action-btn delete" onclick="deleteCard(<?php echo $card['id']; ?>)">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
     </div>
 </div>
 
 <!-- Mobile Layout -->
 <div class="mobile-container">
-    <!-- Add Card Button Mobile -->
-    <div class="add-card-btn" onclick="openAddCardModal()">
+    <!-- Mobile Add Card Button -->
+    <div class="add-card-btn" style="margin: 16px;" onclick="openAddCardModal()">
         <i class="fas fa-plus-circle"></i>
         <h3>Add New Bank Card</h3>
         <p>Add your bank account for withdrawals</p>
     </div>
 
-    <!-- Cards List Mobile -->
+    <!-- Mobile Cards List -->
     <div id="mobileCardsContainer">
         <?php if(empty($cards)): ?>
-        <div class="empty-state">
+        <div class="empty-state" style="margin: 16px;">
             <div class="empty-state-icon">
                 <i class="fas fa-credit-card"></i>
             </div>
@@ -848,7 +996,7 @@ body {
         </div>
         <?php else: ?>
             <?php foreach($cards as $card): ?>
-            <div class="bank-card" data-card-id="<?php echo $card['id']; ?>">
+            <div class="bank-card" data-card-id="<?php echo $card['id']; ?>" style="margin: 0 16px 16px 16px;">
                 <div class="card-header">
                     <div class="bank-icon">
                         <i class="fas fa-university"></i>
@@ -979,6 +1127,21 @@ body {
     </div>
 </div>
 
+<!-- Logout Modal -->
+<div id="logoutModal" class="modal" style="display: none;">
+    <div class="modal-content" style="max-width: 380px; text-align: center;">
+        <div style="width: 60px; height: 60px; background: #FEF2F2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+            <i class="fas fa-sign-out-alt" style="font-size: 24px; color: #EF4444;"></i>
+        </div>
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Logout?</h3>
+        <p style="color: #6B7280; font-size: 14px; margin-bottom: 24px;">Are you sure you want to logout from your account?</p>
+        <div style="display: flex; gap: 12px;">
+            <button onclick="hideLogoutModal()" style="flex: 1; padding: 12px; background: #F3F4F6; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Cancel</button>
+            <button onclick="logout()" style="flex: 1; padding: 12px; background: #EF4444; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Logout</button>
+        </div>
+    </div>
+</div>
+
 <script>
 // Navigation functions
 function goBack() {
@@ -991,6 +1154,9 @@ function goToPage(page) {
     else if(page === 'bookings') window.location.href = '/bookings';
     else if(page === 'saved-rooms') window.location.href = '/saved-rooms';
     else if(page === 'profile') window.location.href = '/profile';
+    else if(page === 'change-password') window.location.href = '/change-password';
+    else if(page === 'bank-cards') window.location.href = '/bank-cards';
+    else if(page === 'settings') window.location.href = '/settings';
     else window.location.href = '/' + page;
 }
 
@@ -1155,12 +1321,38 @@ function deleteCard(cardId) {
     });
 }
 
+// Logout functions
+function showLogoutModal() {
+    document.getElementById('logoutModal').style.display = 'flex';
+}
+
+function hideLogoutModal() {
+    document.getElementById('logoutModal').style.display = 'none';
+}
+
+function logout() {
+    showToast('Logging out...', 'info');
+    
+    fetch('/api/logout', {
+        method: 'POST'
+    })
+    .then(() => {
+        showToast('Logged out successfully!', 'success');
+        setTimeout(() => {
+            window.location.href = '/login';
+        }, 1000);
+    })
+    .catch(() => {
+        window.location.href = '/login';
+    });
+}
+
 // Toast notification
 function showToast(message, type = 'success') {
     const toast = document.createElement('div');
     toast.className = 'toast ' + type;
     
-    let icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+    let icon = type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle';
     toast.innerHTML = `<i class="fas ${icon}"></i> ${message}`;
     
     document.body.appendChild(toast);
@@ -1173,8 +1365,12 @@ function showToast(message, type = 'success') {
 // Close modal when clicking outside
 window.onclick = function(event) {
     const modal = document.getElementById('cardModal');
+    const logoutModal = document.getElementById('logoutModal');
     if (event.target == modal) {
         closeModal();
+    }
+    if (event.target == logoutModal) {
+        hideLogoutModal();
     }
 }
 
