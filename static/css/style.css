@@ -1,0 +1,76 @@
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1F2937;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 9999;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    animation: slideDown 0.2s ease;
+}
+
+
+
+/* Bottom Navigation */
+.bottom-nav {
+    background: white;
+    border-top: 1px solid #F3F4F6;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 414px;
+    z-index: 50;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.02);
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 30px;
+    transition: all 0.2s;
+}
+
+.nav-item i {
+    font-size: 20px;
+    color: #9CA3AF;
+}
+
+.nav-item span {
+    font-size: 11px;
+    color: #9CA3AF;
+    font-weight: 500;
+}
+
+.nav-item.active i,
+.nav-item.active span {
+    color: #2563EB;
+}
