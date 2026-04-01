@@ -1,0 +1,2 @@
+<?php
+ function requirePageRole($allowedRoles = array(), $redirect = "\x2e\x2e\57\x6c\157\x67\151\156\56\160\150\x70") { if (!isset($_SESSION["\165\x73\x65\162"])) { header("\x4c\157\143\141\x74\151\x6f\x6e\72\x20" . $redirect); die; } if (!in_array($_SESSION["\165\x73\145\x72"]["\x72\x6f\x6c\145\137\156\141\155\x65"], $allowedRoles)) { die("\x41\x63\143\145\x73\x73\x20\144\x65\x6e\x69\145\x64"); } }

@@ -1,0 +1,2 @@
+<?php
+ goto uIl4b; j44Xk: session_unset(); goto I50oy; xq8x5: require_once "\x2e\x2e\57\56\56\57\x63\x6f\x6d\x6d\x6f\156\x2f\162\x65\163\160\157\156\x73\x65\x2e\160\x68\x70"; goto j44Xk; uIl4b: require_once "\x2e\x2e\57\x2e\x2e\57\x63\x6f\x6e\x66\151\147\x2f\163\x65\x73\x73\x69\x6f\x6e\x2e\160\150\x70"; goto xq8x5; pCI5q: jsonResponse("\163\165\x63\x63\145\163\163", "\x4c\157\x67\x67\145\x64\40\157\165\164\40\x73\x75\x63\143\x65\163\x73\146\x75\154\x6c\x79"); goto r0sAU; I50oy: session_destroy(); goto pCI5q; r0sAU: ?>
