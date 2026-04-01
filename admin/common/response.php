@@ -1,0 +1,2 @@
+<?php
+ function jsonResponse($status, $message, $data = array(), $code = 200) { http_response_code($code); header("\x43\157\156\164\145\x6e\164\x2d\124\171\x70\x65\x3a\40\141\160\160\x6c\151\x63\141\x74\151\x6f\156\x2f\152\163\x6f\156"); echo json_encode(array("\163\x74\141\164\x75\x73" => $status, "\x6d\x65\163\163\141\x67\145" => $message, "\144\x61\x74\x61" => $data)); die; }
