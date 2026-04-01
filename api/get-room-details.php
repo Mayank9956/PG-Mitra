@@ -1,0 +1,15 @@
+<?php
+ goto Zaw2A; uP70q: if (isset($_GET["\151\144"])) { $room_id = mysqli_real_escape_string($db, $_GET["\151\144"]); $query = "\x53\x45\114\x45\103\x54\x20\52\40\106\122\117\115\40\162\x6f\157\155\163\40\127\x48\x45\122\x45\40\151\x64\x20\75\x20\47{$room_id}\47"; $result = $db->query($query); if ($result && $result->num_rows > 0) { $room = $result->fetch_assoc(); ?>
+<div class="p-6"><img alt="<?php  echo $room["\164\x69\x74\x6c\x65"]; ?>
+"class="h-64 object-cover rounded-t-2xl w-full"src="<?php  echo $room["\x69\155\141\x67\145\x5f\165\x72\x6c"]; ?>
+"><div class="mt-4"><h2 class="font-bold text-2xl text-gray-800"><?php  echo $room["\164\151\164\154\x65"]; ?>
+</h2><div class="flex items-center gap-2 mt-2"><i class="fas text-blue-500 fa-map-marker-alt"></i><p class="text-gray-600"><?php  echo $room["\154\157\x63\x61\x74\151\x6f\x6e"]; ?>
+</p></div><div class="flex items-center gap-4 mt-4"><div class="flex items-center gap-1"><i class="fas fa-star text-yellow-400"></i> <span class="font-semibold"><?php  echo $room["\162\x61\x74\x69\156\x67"]; ?>
+</span><span class="text-gray-500">(<?php  echo $room["\x72\145\x76\x69\145\167\x73\137\143\157\x75\x6e\164"]; ?>
+reviews)</span></div></div><div class="flex items-center gap-4 mt-4 bg-gray-50 p-4 rounded-xl"><div class="text-center"><i class="fas text-blue-500 text-xl fa-bed"></i><p class="text-sm font-medium"><?php  echo $room["\142\x65\x64\162\157\157\155\x73"]; ?>
+Beds</p></div><div class="text-center"><i class="fas text-blue-500 text-xl fa-bath"></i><p class="text-sm font-medium"><?php  echo $room["\142\x61\164\x68\162\157\x6f\155\x73"]; ?>
+Baths</p></div><div class="text-center"><i class="fas text-blue-500 text-xl fa-users"></i><p class="text-sm font-medium"><?php  echo $room["\155\x61\170\137\x67\165\145\163\164\163"]; ?>
+Guests</p></div></div><div class="mt-4"><h3 class="font-semibold text-gray-800">Description</h3><p class="mt-2 text-gray-600"><?php  echo $room["\144\x65\163\x63\162\151\160\164\151\x6f\156"]; ?>
+</p></div><div class="flex items-center justify-between mt-6"><div><p class="text-sm text-gray-500">Price per night</p><p class="font-bold text-2xl text-blue-600">₹<?php  echo number_format($room["\160\x72\151\x63\145"]); ?>
+</p></div><button class="font-semibold bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full text-white transition"onclick="bookNow(event,<?php  echo $room["\x69\x64"]; ?>
+)">Book Now</button></div></div></div><?php  } else { echo "\x3c\x70\x20\143\x6c\x61\x73\x73\x3d\47\160\55\x36\x20\164\x65\x78\x74\x2d\143\x65\x6e\x74\x65\162\x20\x74\x65\x78\164\55\x67\162\141\171\x2d\65\x30\x30\47\x3e\x52\157\157\155\x20\x6e\157\x74\x20\x66\x6f\x75\x6e\x64\74\x2f\160\x3e"; } } goto J8Pds; Z01Ph: $db = $database->getConnection(); goto uP70q; I6Uzf: require_once "\x2e\56\57\x63\x6f\x6d\155\x6f\x6e\x2f\x64\142\137\143\x6f\x6e\156\x65\x63\164\x2e\x70\x68\160"; goto iOru5; Zaw2A: session_start(); goto I6Uzf; iOru5: $database = new Database(); goto Z01Ph; J8Pds: ?>
